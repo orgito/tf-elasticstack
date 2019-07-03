@@ -1,0 +1,47 @@
+# Copy and edit this file with your informatin
+
+# AWS Credentials
+aws_access_key = "YourAWSAccessKey"
+aws_secret_key = "YourAWSSecretKey"
+
+# Namespace, which could be your organization name or abbreviation, e.g. "co" or "company"
+namespace = "company"
+# Stage, e.g. "prod", "staging", "dev"
+stage = "dev"
+
+# Where to deploy the infrastructure
+region = "us-east-1"
+vpc = "vpc-xxxxxxxx"
+subnets = ["subnet-xxxxxxxx", "subnet-yyyyyyyy"]
+
+# Elastic Stack Version (6.x.y or latest).
+elk_version = "latest"
+# Allows you to add nodes with the same version your current cluster is running
+#elk_version = "6.5.2"
+
+# Elasticsearch Cluster Sizing
+# Make sure that all instance types you select are available in your region
+es_instance_type = "t3.medium"
+es_node_count = 2
+# Size in GB
+es_storage_size = 200
+# We will concatenate namespace, stage and cluster_name to create the
+# Elasticsearch Cluster Name (cluster.name in elasticsearch.yml)
+cluster_name = "company"
+
+# Kibana
+kibana_instance_type = "t3.small"
+kibana_node_count = 1
+
+# Logstash
+logstash_instance_type = "t3.medium"
+logstash_node_count = 1
+
+# Cerebro
+cerebro_instance_type = "t2.micro"
+cerebro_version = "0.8.1"
+
+# Allow loggin in the instance using you ssh key pair. The private key
+# will be used by Ansible to manage the instances.
+# https://console.aws.amazon.com/ec2/v2/home?#KeyPairs
+ssh_key_pair = "terraform"
